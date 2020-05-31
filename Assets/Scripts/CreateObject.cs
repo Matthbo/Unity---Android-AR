@@ -11,7 +11,9 @@ public class CreateObject : MonoBehaviour
     {
         if (objToSpawn != null)
         {
-            GameObject obj = (GameObject) Instantiate(objToSpawn, new Vector3(0, 0, 10), Quaternion.identity);
+            GameObject obj = Instantiate(objToSpawn, new Vector3(0, 0, 10), Quaternion.identity);
+            obj.name = objToSpawn.name;
+            obj.tag = "Spawned";
             createdObjects.Add(obj);
         }
     }
